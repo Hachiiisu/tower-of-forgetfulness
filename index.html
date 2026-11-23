@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ตำนานหอคอยลืมเลือน</title>
+<title>Nythra · ตำนานหอคอยลืมเลือน</title>
 <style>
 *{box-sizing:border-box}
 :root{--bg:#171a24;--bg2:#222738;--card:#fbf4e3;--ink:#33271a;--mute:#7a6a55;--line:#e3d5b8;--acc:#b4532a;--acc2:#8f3f1e;--gold:#c8962e;--hp:#c9463d;--mp:#3d7cc4;--good:#2f7d4f}
@@ -9704,6 +9704,12 @@ RUMORS.push({ c: () => qDone('x_dark') && !G.q.x_bounty, t: '"ชายคลุ
   const _ta = tribeActs; tribeActs = function (a) { _ta(a);
     Object.keys(NEAR).forEach(c => { if (typeof RCITY === 'undefined' || !RCITY[c] || G.flags[c + '_open'] || G.loc !== RCITY[c].from || !heard(c) || RFIND[c][0]()) return;
       a.push({ t: '🔍 มีบางอย่างแปลกๆ ตรงนี้', s: 'นึกถึงข่าวลือที่เคยได้ยิน', fn: () => evEnd(NARR, NEAR[c][1]) }); }); };
+})();
+/* ---------- tagline under the logo, and the tab title ---------- */
+(function () {
+  document.title = 'Nythra · ตำนานหอคอยลืมเลือน';
+  const st = document.createElement('style'); st.textContent = '.tagline{display:block;text-align:center;font-size:11.5px;line-height:1.35;color:#e9d6ff;opacity:.9;letter-spacing:.2px;margin:0 auto!important;max-width:330px;position:absolute;left:0;right:0;top:70px;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,.6);font-style:italic}body.tfit .tlogo img{max-height:64px!important}body.tfit .tlogo{height:auto!important}body.tfit .title{overflow:visible!important;position:relative!important}'; document.head.appendChild(st);
+  const _r = render; render = function () { const x = _r.apply(this, arguments); try { if (UI.mode === 'title') { const l = document.querySelector('.title .tlogo'); if (l && !document.querySelector('.tagline')) { const t = document.createElement('div'); t.className = 'tagline'; t.innerHTML = 'แม้โลกจะหลับใหล แม้ผู้คนจะลืมเลือน<br>ทุกรอยทางที่คุณเลือก จะไม่มีวันจางหาย'; l.after(t); } } } catch (e) { /* ignore */ } return x; };
 })();
 
 /* ================= AUDIO: generated music + synthesized effects (no files) ================= */
